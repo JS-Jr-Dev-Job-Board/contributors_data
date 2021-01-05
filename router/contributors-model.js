@@ -19,7 +19,7 @@ module.exports = {
       .then((count) => (count > 0 ? this.getContributorById(id) : null));
   },
   deleteContributor(id) {
-    return "contributors"
+    return db("contributors")
       .where({ id })
       .del()
       .then(() => this.getContributors());
